@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Radio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1 class="logo">Web Radio</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">☀️</span>
+            </button>
+        </header>
+
+        <main class="main">
+            <div class="player-card">
+                <div class="now-playing">
+                    <div class="station-indicator" id="stationIndicator">
+                        <div class="station-wave"></div>
+                        <div class="station-wave"></div>
+                        <div class="station-wave"></div>
+                    </div>
+                    <div class="station-info">
+                        <p class="now-playing-label">Now Playing</p>
+                        <h2 class="station-name" id="stationName">Select a station</h2>
+                    </div>
+                </div>
+
+                <audio id="audioPlayer" crossorigin="anonymous"></audio>
+
+                <div class="controls">
+                    <button class="control-btn play-pause" id="playPauseBtn" aria-label="Play">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" class="play-icon"/>
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" class="pause-icon" style="display: none;"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="volume-control">
+                    <button class="volume-btn" id="muteBtn" aria-label="Mute">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                    <span class="volume-value" id="volumeValue">70%</span>
+                </div>
+            </div>
+
+            <div class="stations-section">
+                <h3 class="stations-title">Stations</h3>
+                <ul class="stations-list" id="stationsList">
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Web Radio - Free Internet Radio</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
